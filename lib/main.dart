@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() => runApp(MaterialApp(
+  debugShowCheckedModeBanner: false,
   theme : ThemeData(
     brightness: Brightness.light,
     primaryColor: Colors.blue,
@@ -29,6 +30,19 @@ class _MyAppState extends State<MyApp> {
   }
   getStudentGPA(gpa){
     this.studentGPA = double.parse(gpa);
+  }
+
+  createData(){
+    print("created");
+  }
+  readData(){
+    print("readed");
+  }
+  updateData(){
+    print("updated");
+  }
+  deleteData(){
+    print("deleted");
   }
 
   @override
@@ -100,6 +114,55 @@ class _MyAppState extends State<MyApp> {
                     getStudentGPA(gpa);
                   }
               ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                RaisedButton(
+                  color: Colors.green,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                  child: Text('Create'),
+                  textColor: Colors.white,
+                  onPressed: () {
+                    createData();
+                  },
+                ),
+                RaisedButton(
+                  color: Colors.blue,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                  child: Text('Read'),
+                  textColor: Colors.white,
+                  onPressed: () {
+                    readData();
+                  },
+                ),
+                RaisedButton(
+                  color: Colors.orange,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                  child: Text('Update'),
+                  textColor: Colors.white,
+                  onPressed: () {
+                    updateData();
+                  },
+                ),
+                RaisedButton(
+                  color: Colors.red,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                  child: Text('Delete'),
+                  textColor: Colors.white,
+                  onPressed: () {
+                    deleteData();
+                  },
+                ),
+              ],
             ),
           ],
         ),
